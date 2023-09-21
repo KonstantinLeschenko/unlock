@@ -7,6 +7,23 @@ First
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_1.png)
 
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_2.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_3.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_4.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_5.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_6.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_7.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_8.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_9.png)
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_10.png)
 
 
 ## Getting Started
