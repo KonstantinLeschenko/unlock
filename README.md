@@ -25,9 +25,9 @@ That's pactice_page
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_6.png)
 
-![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_7.png)
-
 After the user clicks the button, he is taken to practice_topic_page
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_7.png)
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_8.png)
 
