@@ -1,6 +1,11 @@
 # unlock
 
 This app helps people who are interested in MAK.
+How it works.
+
+First
+
+
 
 ## Getting Started
 
