@@ -35,6 +35,8 @@ Here practice starts
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_9.png)
 
+Here practice ends
+
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_10.png)
 
 
