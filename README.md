@@ -5,6 +5,8 @@ How it works.
 
 First
 
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_1.png)
+
 
 
 ## Getting Started
