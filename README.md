@@ -21,9 +21,9 @@ That's menu_page
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_5.png)
 
-![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_6.png)
-
 That's pactice_page
+
+![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_6.png)
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_7.png)
 
