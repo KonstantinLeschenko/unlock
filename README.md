@@ -1,6 +1,6 @@
 # unlock
 
-A new Flutter project.
+This app helps people who are interested in MAK.
 
 ## Getting Started
 
