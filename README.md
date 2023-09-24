@@ -39,5 +39,7 @@ Here practice ends
 
 ![Image alt](https://github.com/KonstantinLeschenko/unlock/blob/main/excalibur/ex_10.png)
 
+That's all
+
 
 
