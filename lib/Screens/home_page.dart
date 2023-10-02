@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Column(
             children: [
+              SizedBox(height: 30,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                   child: Padding(
-                      padding: const EdgeInsets.all(30.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Image.asset(
                         genImage(),
                         fit: BoxFit.fill,
