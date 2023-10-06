@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Data/constance.dart';
-import 'package:unlock/Screens/home_page.dart';
+import 'package:unlock/Screens/practice_page.dart';
+import 'package:unlock/Widgets/my_app_bar.dart';
 import 'package:unlock/Widgets/my_menu_container.dart';
 
 class MenuPage extends StatelessWidget {
@@ -8,9 +8,9 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    navigateHomePage() {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const HomePage()));
+    navigatePracticePage() {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const PracticePage()));
     }
 
     double screenWidth = MediaQuery.sizeOf(context).width;
@@ -26,65 +26,33 @@ class MenuPage extends StatelessWidget {
           ),
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {Navigator.pop(context);},
-                      child: Container(
-                          decoration: BoxDecoration(
-                              color: Constance().appColor,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: ImageIcon(
-                            const AssetImage('assets/ic_backward.png'),
-                            size: screenWidth / 10,
-                            color: Colors.white,
-                          )),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    GestureDetector(
-                      onTap: navigateHomePage,
-                      child: Container(
-                          decoration: BoxDecoration(
-                              color: Constance().appColor,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: ImageIcon(
-                            const AssetImage('assets/ic_home.png'),
-                            size: screenWidth / 10,
-                            color: Colors.white,
-                          )),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: screenWidth / 10,
-                        decoration: BoxDecoration(
-                            color: Constance().appColor,
-                            borderRadius: BorderRadius.circular(5)),
-                        child: const Center(
-                            child: Text(
-                          'Menu',
-                          style: TextStyle(color: Colors.white),
-                        )),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              MyAppBar(title: 'Menu'),
               Expanded(
                 child: ListView(
                   children: [
-                    MyMenuContainer(assetName: 'assets/ic_learning.png'),
-                    MyMenuContainer(assetName: 'assets/ic_practice.png'),
-                    MyMenuContainer(assetName: 'assets/ic_buy.png'),
-                    MyMenuContainer(assetName: 'assets/ic_consultation.png'),
-                    MyMenuContainer(assetName: 'assets/ic_feedback.png'),
-                    MyMenuContainer(assetName: 'assets/ic_about.png'),
+                    MyMenuContainer(
+                      assetName: 'assets/ic_learning.png',
+                      function: () {},
+                    ),
+                    MyMenuContainer(
+                        assetName: 'assets/ic_practice.png',
+                        function: navigatePracticePage),
+                    MyMenuContainer(
+                      assetName: 'assets/ic_buy.png',
+                      function: () {},
+                    ),
+                    MyMenuContainer(
+                      assetName: 'assets/ic_consultation.png',
+                      function: () {},
+                    ),
+                    MyMenuContainer(
+                      assetName: 'assets/ic_feedback.png',
+                      function: () {},
+                    ),
+                    MyMenuContainer(
+                      assetName: 'assets/ic_about.png',
+                      function: () {},
+                    ),
                   ],
                 ),
               )
