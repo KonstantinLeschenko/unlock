@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'menu_page.dart';
 import 'user_page.dart';
+import 'package:unlock/Data/constance.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,84 +22,86 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.sizeOf(context).width;
+    double screenHeight = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: Stack(
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Image.asset('assets/bg.jpg', fit: BoxFit.fill),
+            width: screenWidth,
+            height: screenHeight,
+            child: Image.asset('assets/bg.png', fit: BoxFit.fill),
           ),
           Column(
             children: [
-              SizedBox(height: 30,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: GestureDetector(
+              Padding(
+                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
                       onTap: navigateMenuPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.purple,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Icon(
-                            Icons.menu,
-                            size: 40,
+                              color: Constance().appColor,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ImageIcon(
+                            const AssetImage('assets/ic_menu.png'),
+                            size: screenWidth / 10,
                             color: Colors.white,
                           )),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: GestureDetector(
+                    GestureDetector(
                       onTap: navigateUserPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.purple,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: const Icon(
-                            Icons.account_circle,
-                            size: 40,
+                              color: Constance().appColor,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ImageIcon(
+                            const AssetImage('assets/ic_user.png'),
+                            size: screenWidth / 10,
                             color: Colors.white,
                           )),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Expanded(
                   child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(15.0),
                       child: Image.asset(
                         genImage(),
                         fit: BoxFit.fill,
                       ))),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isGenerated = !isGenerated;
-                      });
-                    },
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.purple)),
-                    child: const Text(
-                      'Твоя карта дня',
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isGenerated = !isGenerated;
+                  });
+                },
+                child: Container(
+                  width: screenWidth / 1.5,
+                  height: screenHeight / 15,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Constance().appColor,),
+                  child: const Center(
+                    child: Text(
+                      'Your card of a day',
                       style: TextStyle(color: Colors.white),
-                    )),
+                    ),
+                  ),
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                 child: TextButton.icon(
                   onPressed: () => showDialog<String>(
                       context: context,
                       builder: (BuildContext context) => AlertDialog(
-                            title: Text('What is this ?'),
-                            content: Text('About card of a day'),
-                            backgroundColor: Colors.yellow,
+                            title: const Text('What is this ?'),
+                            content: const Text('About card of a day'),
+                            backgroundColor: Colors.yellow[200],
                             actions: [
                               TextButton(
                                 onPressed: () => Navigator.pop(context, 'OK'),
@@ -106,12 +109,12 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           )),
-                  icon: const Icon(
-                    Icons.info,
-                    color: Colors.purple,
+                  icon: const ImageIcon(
+                    AssetImage('assets/ic_info.png'),
+                    size: 20,
                   ),
                   label: const Text(
-                    'Узнать подробнее про карту дня',
+                    'Learn more about card of a day',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
@@ -125,7 +128,7 @@ class _HomePageState extends State<HomePage> {
 
   String genImage() {
     String path;
-    isGenerated ? path = 'assets/gen_card.jpg' : path = 'assets/ic_card.jpg';
+    isGenerated ? path = 'assets/gen_card.png' : path = 'assets/ic_card.png';
     return path;
   }
 
