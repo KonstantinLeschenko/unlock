@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'menu_page.dart';
 import 'user_page.dart';
-import 'package:unlock/Data/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: navigateMenuPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Constants().appColor,
+                              color: const Color(0xFF91708e),
                               borderRadius: BorderRadius.circular(5)),
                           child: ImageIcon(
                             const AssetImage('assets/ic_menu.png'),
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: navigateUserPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Constants().appColor,
+                              color: const Color(0xFF91708e),
                               borderRadius: BorderRadius.circular(5)),
                           child: ImageIcon(
                             const AssetImage('assets/ic_user.png'),
@@ -83,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   height: myScreen.height / 15,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Constants().appColor,
+                    color: const Color(0xFF91708e),
                   ),
                   child: const Center(
                     child: Text(

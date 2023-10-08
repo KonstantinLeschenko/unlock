@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
 final class Constants {
-  Color appColor = const Color(0xFF91708e);
-
   List<String> practicesCategories = [
     'Interaction with finance',
     'Time',

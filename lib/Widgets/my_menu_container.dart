@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Data/constants.dart';
 
 // ignore: must_be_immutable
 class MyMenuContainer extends StatelessWidget {
@@ -21,7 +20,7 @@ class MyMenuContainer extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: Container(
                 decoration: BoxDecoration(
-                    color: Constants().appColor,
+                    color: const Color(0xFF91708e),
                     borderRadius: BorderRadius.circular(10)),
                 child: ImageIcon(
                   AssetImage(

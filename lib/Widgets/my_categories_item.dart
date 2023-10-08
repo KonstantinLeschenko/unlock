@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Data/constants.dart';
 
 // ignore: must_be_immutable
 class MyCategoriesItem extends StatelessWidget {
@@ -14,7 +13,7 @@ class MyCategoriesItem extends StatelessWidget {
       child: Container(
         height: screenHeight / 12,
         decoration: BoxDecoration(
-            color: Constants().appColor,
+            color: const Color(0xFF91708e),
             borderRadius: BorderRadius.circular(10)),
         child: Center(
             child: Text(

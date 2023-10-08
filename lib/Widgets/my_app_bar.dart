@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Data/constants.dart';
 import '../Screens/home_page.dart';
 
 // ignore: must_be_immutable
@@ -26,7 +25,7 @@ class MyAppBar extends StatelessWidget {
             },
             child: Container(
                 decoration: BoxDecoration(
-                    color: Constants().appColor,
+                    color: const Color(0xFF91708e),
                     borderRadius: BorderRadius.circular(5)),
                 child: ImageIcon(
                   const AssetImage('assets/ic_backward.png'),
@@ -41,7 +40,7 @@ class MyAppBar extends StatelessWidget {
             onTap: navigateHomePage,
             child: Container(
                 decoration: BoxDecoration(
-                    color: Constants().appColor,
+                    color: const Color(0xFF91708e),
                     borderRadius: BorderRadius.circular(5)),
                 child: ImageIcon(
                   const AssetImage('assets/ic_home.png'),
@@ -56,7 +55,7 @@ class MyAppBar extends StatelessWidget {
             child: Container(
               height: screenWidth / 10,
               decoration: BoxDecoration(
-                  color: Constants().appColor,
+                  color: const Color(0xFF91708e),
                   borderRadius: BorderRadius.circular(5)),
               child: Center(
                   child: Text(
