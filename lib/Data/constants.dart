@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-final class Constance {
-  Color appColor = const Color(0xFF91708e);  
+final class Constants {
+  Color appColor = const Color(0xFF91708e);
 
-  List<String> practiesCategories = [
+  List<String> practicesCategories = [
     'Interaction with finance',
     'Time',
     'Choice of profession',

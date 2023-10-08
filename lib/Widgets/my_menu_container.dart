@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Data/constance.dart';
+import 'package:unlock/Data/constants.dart';
 
 // ignore: must_be_immutable
 class MyMenuContainer extends StatelessWidget {
@@ -18,10 +18,10 @@ class MyMenuContainer extends StatelessWidget {
         GestureDetector(
           onTap: function,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+            padding: const EdgeInsets.all(8),
             child: Container(
                 decoration: BoxDecoration(
-                    color: Constance().appColor,
+                    color: Constants().appColor,
                     borderRadius: BorderRadius.circular(10)),
                 child: ImageIcon(
                   AssetImage(

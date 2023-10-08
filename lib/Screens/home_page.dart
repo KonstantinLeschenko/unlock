@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'menu_page.dart';
 import 'user_page.dart';
-import 'package:unlock/Data/constance.dart';
+import 'package:unlock/Data/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,14 +21,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.sizeOf(context).width;
-    double screenHeight = MediaQuery.sizeOf(context).height;
+    var myScreen = MediaQuery.sizeOf(context);
+
     return Scaffold(
       body: Stack(
         children: [
           SizedBox(
-            width: screenWidth,
-            height: screenHeight,
+            width: myScreen.width,
+            height: myScreen.height,
             child: Image.asset('assets/bg.png', fit: BoxFit.fill),
           ),
           Column(
@@ -43,11 +42,11 @@ class _HomePageState extends State<HomePage> {
                       onTap: navigateMenuPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Constance().appColor,
+                              color: Constants().appColor,
                               borderRadius: BorderRadius.circular(5)),
                           child: ImageIcon(
                             const AssetImage('assets/ic_menu.png'),
-                            size: screenWidth / 10,
+                            size: myScreen.width / 10,
                             color: Colors.white,
                           )),
                     ),
@@ -55,11 +54,11 @@ class _HomePageState extends State<HomePage> {
                       onTap: navigateUserPage,
                       child: Container(
                           decoration: BoxDecoration(
-                              color: Constance().appColor,
+                              color: Constants().appColor,
                               borderRadius: BorderRadius.circular(5)),
                           child: ImageIcon(
                             const AssetImage('assets/ic_user.png'),
-                            size: screenWidth / 10,
+                            size: myScreen.width / 10,
                             color: Colors.white,
                           )),
                     ),
@@ -80,11 +79,12 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 child: Container(
-                  width: screenWidth / 1.5,
-                  height: screenHeight / 15,
+                  width: myScreen.width / 1.5,
+                  height: myScreen.height / 15,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Constance().appColor,),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Constants().appColor,
+                  ),
                   child: const Center(
                     child: Text(
                       'Your card of a day',

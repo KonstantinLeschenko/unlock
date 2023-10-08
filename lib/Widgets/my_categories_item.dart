@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../Data/constance.dart';
+import '../Data/constants.dart';
 
 // ignore: must_be_immutable
 class MyCategoriesItem extends StatelessWidget {
@@ -11,11 +10,11 @@ class MyCategoriesItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+      padding: const EdgeInsets.all(8),
       child: Container(
         height: screenHeight / 12,
         decoration: BoxDecoration(
-            color: Constance().appColor,
+            color: Constants().appColor,
             borderRadius: BorderRadius.circular(10)),
         child: Center(
             child: Text(
