@@ -1,5 +1,7 @@
 # unlock
 
+![](https://github.com/KonstantinLeschenko/unlock/blob/lesson_8/assets/lesson_8.gif)
+
 This app helps people who are interested in MAK.
 How it works.
 

@@ -13,15 +13,14 @@ class MenuPage extends StatelessWidget {
           MaterialPageRoute(builder: (context) => const PracticePage()));
     }
 
-    double screenWidth = MediaQuery.sizeOf(context).width;
-    double screenHeight = MediaQuery.sizeOf(context).height;
+    var myScreen = MediaQuery.sizeOf(context);
 
     return Scaffold(
       body: Stack(
         children: [
           SizedBox(
-            width: screenWidth,
-            height: screenHeight,
+            width: myScreen.width,
+            height: myScreen.height,
             child: Image.asset('assets/bg_menu.png', fit: BoxFit.fill),
           ),
           Column(
