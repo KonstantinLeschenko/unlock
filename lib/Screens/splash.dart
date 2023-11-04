@@ -19,12 +19,16 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Image.asset('assets/splash_screen.jpg', fit: BoxFit.fill),
-          ),
-        ));
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Image.asset(
+            MediaQuery.of(context).platformBrightness == Brightness.dark
+                ? 'assets/splash_dark.png'
+                : 'assets/splash_light.png',
+            fit: BoxFit.fill),
+      ),
+    ));
   }
 
   void _navigateHome() async {

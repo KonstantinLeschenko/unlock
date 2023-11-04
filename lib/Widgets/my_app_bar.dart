@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Data/constance.dart';
 import '../Screens/home_page.dart';
 
 // ignore: must_be_immutable
@@ -25,9 +24,8 @@ class MyAppBar extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-                decoration: BoxDecoration(
-                    color: Constance().appColor,
-                    borderRadius: BorderRadius.circular(5)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(5)),
                 child: ImageIcon(
                   const AssetImage('assets/ic_backward.png'),
                   size: screenWidth / 10,
@@ -40,9 +38,8 @@ class MyAppBar extends StatelessWidget {
           GestureDetector(
             onTap: navigateHomePage,
             child: Container(
-                decoration: BoxDecoration(
-                    color: Constance().appColor,
-                    borderRadius: BorderRadius.circular(5)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(5)),
                 child: ImageIcon(
                   const AssetImage('assets/ic_home.png'),
                   size: screenWidth / 10,
@@ -55,9 +52,7 @@ class MyAppBar extends StatelessWidget {
           Expanded(
             child: Container(
               height: screenWidth / 10,
-              decoration: BoxDecoration(
-                  color: Constance().appColor,
-                  borderRadius: BorderRadius.circular(5)),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
               child: Center(
                   child: Text(
                 title,
