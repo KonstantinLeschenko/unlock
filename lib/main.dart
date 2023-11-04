@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:unlock/Screens/splash.dart';
 import 'package:flutter/services.dart';
+import 'package:unlock/theme/theme_constants.dart';
 
-void main() { 
+void main() {
   runApp(const MyApp());
 }
 
@@ -12,13 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
-  SystemUiOverlay.bottom
-]);
-    
-    return const MaterialApp(
+
+    return MaterialApp(
+      theme: lightTheme,
+      darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: const Splash(),
     );
   }
 }
