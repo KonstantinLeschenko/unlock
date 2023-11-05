@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+
 import '../theme/theme_constants.dart';
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+class MaterialsPage extends StatelessWidget {
+  final String name;
+  // ignore: prefer_const_constructors_in_immutables
+  MaterialsPage({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About this app'),
+        title: const Text('Materials'),
       ),
       body: Stack(
         children: [
@@ -18,7 +21,7 @@ class AboutPage extends StatelessWidget {
             child: Image.asset(
                 MediaQuery.of(context).platformBrightness == Brightness.dark
                     ? 'assets/bg_notifications_dark.png'
-                    : 'assets/bg_notifications_light.png',
+                    : 'assets/bg_notitfications_light.png',
                 fit: BoxFit.fill),
           ),
           Center(
@@ -34,8 +37,7 @@ class AboutPage extends StatelessWidget {
                           : COLOR_PRIMARY_LIGHT,
                       borderRadius:
                           const BorderRadius.all(Radius.circular(30))),
-                  child: const Center(
-                      child: Text('Later there will be abiut this app text')),
+                  child: Center(child: Text(name)),
                 ),
               ),
             ),

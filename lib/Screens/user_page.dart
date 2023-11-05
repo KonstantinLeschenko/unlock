@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Screens/consultation_page.dart';
-import 'package:unlock/Screens/feed_back_page.dart';
-import 'package:unlock/Screens/notifications.dart';
-import 'package:unlock/Screens/profile_page.dart';
+import 'package:go_router/go_router.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
 class UserPage extends StatelessWidget {
@@ -46,30 +43,16 @@ class UserPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ProfilePage())),
+                        onTap: () => context.push('/profile'),
                         child: const Icon(Icons.account_box)),
                     GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const FeedBackPage())),
+                        onTap: () => context.push('/feedback'),
                         child: const Icon(Icons.message)),
                     GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const ConsultationPage())),
+                        onTap: () => context.push('/consultation'),
                         child: const Icon(Icons.calendar_today)),
                     GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const NotificationsPage())),
+                        onTap: () => context.push('/notifications'),
                         child: const Icon(Icons.notifications))
                   ],
                 ),
