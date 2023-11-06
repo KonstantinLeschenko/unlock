@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Screens/home_page.dart';
+import 'package:go_router/go_router.dart';
+//import 'package:unlock/Screens/home_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -34,7 +35,9 @@ class _SplashState extends State<Splash> {
   void _navigateHome() async {
     await Future.delayed(const Duration(seconds: 2), () {});
     // ignore: use_build_context_synchronously
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+    // Navigator.pushReplacement(
+    //     context, MaterialPageRoute(builder: (context) => const HomePage()));
+    // ignore: use_build_context_synchronously
+    context.go('/home');
   }
 }

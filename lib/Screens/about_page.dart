@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../theme/theme_constants.dart';
 
 class AboutPage extends StatelessWidget {
@@ -33,8 +32,10 @@ class AboutPage extends StatelessWidget {
                       color: Theme.of(context).brightness == Brightness.dark
                           ? COLOR_PRIMARY_DARK
                           : COLOR_PRIMARY_LIGHT,
-                      borderRadius: const BorderRadius.all(Radius.circular(30))),
-                child: const Center(child: Text('Later there will be abiut this app text')),      
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
+                  child: const Center(
+                      child: Text('Later there will be abiut this app text')),
                 ),
               ),
             ),

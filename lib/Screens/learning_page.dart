@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../theme/theme_constants.dart';
 
+// ignore: must_be_immutable
 class LearningPage extends StatelessWidget {
   LearningPage({super.key});
 
@@ -58,8 +60,14 @@ class LearningPage extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: articles.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return ListTile(
-                          title: Text(articles[index]),
+                        return GestureDetector(
+                          onTap: () {
+                            String name = articles[index].toString();
+                            context.push('/materials/$name');
+                          },
+                          child: ListTile(
+                            title: Text(articles[index]),
+                          ),
                         );
                       }),
                 ),

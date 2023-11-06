@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unlock/Screens/about_page.dart';
-import 'package:unlock/Screens/learning_page.dart';
-import 'package:unlock/Screens/practices_page.dart';
-import 'user_page.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,7 +22,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         actions: [
           GestureDetector(
-              onTap: navigateUserPage, child: const Icon(Icons.account_circle)),
+              onTap: () => context.push('/user'),
+              child: const Icon(Icons.account_circle)),
         ],
       ),
       drawer: Drawer(
@@ -34,27 +32,22 @@ class _HomePageState extends State<HomePage> {
             const DrawerHeader(child: Text('')),
             TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LearningPage()));
+                  context.pop();
+                  context.push('/learning');
                 },
                 child: const Text('Learning')),
-            TextButton(onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PracticesPage()));
-                }, child: const Text('Practices')),
-            TextButton(onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AboutPage()));
-                }, child: const Text('About this app')),
+            TextButton(
+                onPressed: () {
+                  context.pop();
+                  context.push('/practices');
+                },
+                child: const Text('Practices')),
+            TextButton(
+                onPressed: () {
+                  context.pop();
+                  context.push('/about');
+                },
+                child: const Text('About this app')),
           ],
         ),
       ),
@@ -85,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                         content: const Text('About card of a day'),
                         actions: [
                           TextButton(
-                            onPressed: () => Navigator.pop(context, 'OK'),
+                            onPressed: () => context.pop(),
                             child: const Text('OK'),
                           ),
                         ],
@@ -112,10 +105,5 @@ class _HomePageState extends State<HomePage> {
             ? path = 'assets/card_dark.png'
             : path = 'assets/card_light.png';
     return path;
-  }
-
-  navigateUserPage() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const UserPage()));
   }
 }
