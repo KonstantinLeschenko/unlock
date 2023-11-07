@@ -6,10 +6,12 @@ import 'package:unlock/Screens/error_screen.dart';
 import 'package:unlock/Screens/feed_back_page.dart';
 import 'package:unlock/Screens/home_page.dart';
 import 'package:unlock/Screens/learning_page.dart';
+import 'package:unlock/Screens/log_in_page.dart';
 import 'package:unlock/Screens/materials.dart';
 import 'package:unlock/Screens/notifications_page.dart';
 import 'package:unlock/Screens/practices_page.dart';
 import 'package:unlock/Screens/profile_page.dart';
+import 'package:unlock/Screens/registration_page.dart';
 import 'package:unlock/Screens/splash.dart';
 import 'package:flutter/services.dart';
 import 'package:unlock/Screens/user_page.dart';
@@ -40,6 +42,14 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (context, state) => const Splash(),
+      ),
+      GoRoute(
+        path: '/login',
+        builder: (context, state) => const LogInPage(),
+      ),
+      GoRoute(
+        path: '/registration',
+        builder: (context, state) => const RegistrationPage(),
       ),
       GoRoute(
         path: '/home',

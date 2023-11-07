@@ -38,6 +38,6 @@ class _SplashState extends State<Splash> {
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => const HomePage()));
     // ignore: use_build_context_synchronously
-    context.go('/home');
+    context.go('/login');
   }
 }
