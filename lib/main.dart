@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:unlock/Screens/about_page.dart';
 import 'package:unlock/Screens/consultation_page.dart';
@@ -18,7 +19,7 @@ import 'package:unlock/Screens/user_page.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
