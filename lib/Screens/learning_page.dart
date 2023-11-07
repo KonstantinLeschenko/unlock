@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../data/my_api.dart';
 import '../theme/theme_constants.dart';
 
-// ignore: must_be_immutable
-class LearningPage extends StatelessWidget {
-  LearningPage({super.key});
+final listArticlesProvider = StateProvider<List<String>>((_) {
+  return MyAPI().myArticles;
+});
 
-  List<String> articles = [
-    'MAC - what is it and what is it for?',
-    'Types of MAC decks',
-    'Principles of working with MAC',
-    'Strategies for working with MAC',
-    'Methods of application',
-    'MAC - diagnostics',
-    'MAC - as an auxiliary tool',
-    'MAC - as a full-fledged working tool',
-    'Scheme of a psychocorrection session',
-    'MAC - fixation',
-    'Request options',
-    'Session end options'
-  ];
+class LearningPage extends ConsumerWidget {
+  const LearningPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Learning'),
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -34,8 +22,8 @@ class LearningPage extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height,
             child: Image.asset(
                 MediaQuery.of(context).platformBrightness == Brightness.dark
-                    ? 'assets/bg_learning_dark.png'
-                    : 'assets/bg_learning_light.png',
+                    ? 'assets/bg_practices_dark.png'
+                    : 'assets/bg_practices_light.png',
                 fit: BoxFit.fill),
           ),
           Align(
@@ -56,17 +44,17 @@ class LearningPage extends StatelessWidget {
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30))),
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(15),
                   child: ListView.builder(
-                      itemCount: articles.length,
+                      itemCount: ref.watch(listArticlesProvider).length,
                       itemBuilder: (BuildContext context, int index) {
                         return GestureDetector(
                           onTap: () {
-                            String name = articles[index].toString();
+                            String name = ref.read(listArticlesProvider)[index];
                             context.push('/materials/$name');
                           },
                           child: ListTile(
-                            title: Text(articles[index]),
+                            title: Text(ref.read(listArticlesProvider)[index]),
                           ),
                         );
                       }),

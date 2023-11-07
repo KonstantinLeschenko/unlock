@@ -4,6 +4,21 @@ class Category {
   Category({required this.categoryName});
 }
 
+List<String> articles = [
+  'MAC - what is it and what is it for?',
+  'Types of MAC decks',
+  'Principles of working with MAC',
+  'Strategies for working with MAC',
+  'Methods of application',
+  'MAC - diagnostics',
+  'MAC - as an auxiliary tool',
+  'MAC - as a full-fledged working tool',
+  'Scheme of a psychocorrection session',
+  'MAC - fixation',
+  'Request options',
+  'Session end options'
+];
+
 List<Category> categories = [
   Category(categoryName: 'Crisis situations'),
   Category(categoryName: 'Motherhood'),
@@ -211,11 +226,9 @@ class MyAPI {
 
   List<Practice> myPractices = practices;
 
+  List<String> myArticles = articles;
+
   getPracticesByCategory(String cat) {
     return practices.where((element) => element.practiceName == cat);
   }
-
-
-
-  
 }
