@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/generated/l10n.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
 class ConsultationPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class ConsultationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign up for a consultation'),
+        title: Text(S.of(context).consultationPageTitle),
       ),
       body: Stack(
         children: [

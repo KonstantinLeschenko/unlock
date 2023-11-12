@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/generated/l10n.dart';
 
 class FeedBackPage extends StatefulWidget {
   const FeedBackPage({super.key});
@@ -22,7 +23,7 @@ class _MyWidgetState extends State<FeedBackPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FeedBack'),
+        title: Text(S.of(context).feedBackPageTitle),
       ),
       body: Stack(children: [
         SizedBox(
@@ -63,7 +64,7 @@ class _MyWidgetState extends State<FeedBackPage> {
                             padding: const EdgeInsets.all(10.0),
                             child: TextField(
                               controller: messageTheme,
-                              decoration: const InputDecoration(hintText: 'Theme of the nessage'),
+                              decoration: InputDecoration(hintText: S.of(context).themeOfTheMessege),
                             ),
                           ),
                           Padding(
@@ -74,7 +75,7 @@ class _MyWidgetState extends State<FeedBackPage> {
                                 controller: messageText,
                                 maxLines: null,
                                 expands: true,
-                                decoration: const InputDecoration(hintText: 'Your Message'),
+                                decoration: InputDecoration(hintText: S.of(context).yourMessege),
                               ),
                             ),
                           ),
@@ -85,7 +86,7 @@ class _MyWidgetState extends State<FeedBackPage> {
                       padding: const EdgeInsets.all(20.0),
                       child: ElevatedButton(
                         onPressed: () {},
-                        child: const Text('Send'),
+                        child: Text(S.of(context).send),
                       ),
                     )
                   ],

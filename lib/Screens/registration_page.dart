@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -24,7 +25,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: Text(S.of(context).registrationPageTitle),
       ),
       body: Stack(
         children: [
@@ -63,18 +64,18 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         children: [
                           TextField(
                             controller: loginController,
-                            decoration: const InputDecoration(
-                                icon: Icon(Icons.email),
-                                hintText: 'Your login'),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.email),
+                                hintText: S.of(context).hintLogIn),
                           ),
                           TextField(
                             controller: passwordController,
                             obscureText: true,
                             enableSuggestions: false,
                             autocorrect: false,
-                            decoration: const InputDecoration(
-                              icon: Icon(Icons.password),
-                              hintText: 'Your password',
+                            decoration: InputDecoration(
+                              icon: const Icon(Icons.password),
+                              hintText: S.of(context).hintPassword,
                             ),
                           ),
                         ],
@@ -91,7 +92,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       (passwordController.text != ''))
                                     {context.go('/home')}
                                 },
-                                child: const Text('LogIn'),
+                                child: Text(S.of(context).register),
                               ),
                             ),
                           ),

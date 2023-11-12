@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/generated/l10n.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
 class UserPage extends StatelessWidget {
@@ -9,7 +10,7 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Account'),
+        title: Text(S.of(context).userPageTitle),
       ),
       body: Stack(
         children: [

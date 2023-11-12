@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,19 +36,19 @@ class _HomePageState extends State<HomePage> {
                   context.pop();
                   context.push('/learning');
                 },
-                child: const Text('Learning')),
+                child: Text(S.of(context).learning)),
             TextButton(
                 onPressed: () {
                   context.pop();
                   context.push('/practices');
                 },
-                child: const Text('Practices')),
+                child: Text(S.of(context).practices)),
             TextButton(
                 onPressed: () {
                   context.pop();
                   context.push('/about');
                 },
-                child: const Text('About this app')),
+                child: Text(S.of(context).aboutThisApp)),
           ],
         ),
       ),
@@ -67,15 +68,15 @@ class _HomePageState extends State<HomePage> {
               onPressed: () => setState(() {
                     isGenerated = !isGenerated;
                   }),
-              child: const Text('Your card of a day')),
+              child: Text(S.of(context).yourCardOfADay)),
           Padding(
             padding: const EdgeInsets.all(8),
             child: TextButton.icon(
               onPressed: () => showDialog<String>(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                        title: const Text('What is this ?'),
-                        content: const Text('About card of a day'),
+                        
+                        content: SingleChildScrollView(child: Text(S.of(context).aboutCardOfADayText)),
                         actions: [
                           TextButton(
                             onPressed: () => context.pop(),
@@ -87,9 +88,7 @@ class _HomePageState extends State<HomePage> {
                 AssetImage('assets/ic_info.png'),
                 size: 20,
               ),
-              label: const Text(
-                'Learn more about card of a day',
-              ),
+              label: Text(S.of(context).aboutCardOfADay),
             ),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unlock/data/my_api.dart';
+import 'package:unlock/generated/l10n.dart';
 
 import '../theme/theme_constants.dart';
 
@@ -11,7 +12,9 @@ class PracticesPage extends StatelessWidget {
     List<Category> categories = MyAPI().myCategories;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(S.of(context).practices),
+      ),
       body: Stack(
         children: [
           SizedBox(

@@ -11,7 +11,7 @@ class MaterialsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Materials'),
+        title: Text(name),
       ),
       body: Stack(
         children: [

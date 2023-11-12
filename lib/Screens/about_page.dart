@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
 class AboutPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About this app'),
+        title: Text(S.of(context).aboutThisApp),
       ),
       body: Stack(
         children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:unlock/Screens/about_page.dart';
 import 'package:unlock/Screens/consultation_page.dart';
@@ -15,9 +16,12 @@ import 'package:unlock/Screens/registration_page.dart';
 import 'package:unlock/Screens/splash.dart';
 import 'package:flutter/services.dart';
 import 'package:unlock/Screens/user_page.dart';
+import 'package:unlock/data/locator.dart';
+import 'package:unlock/generated/l10n.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -29,6 +33,13 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     return MaterialApp.router(
+      localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
