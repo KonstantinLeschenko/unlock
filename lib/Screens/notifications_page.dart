@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/generated/l10n.dart';
 
 class NotificationsPage extends StatelessWidget {
   const NotificationsPage({super.key});
@@ -7,7 +8,7 @@ class NotificationsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications'),
+        title: Text(S.of(context).notificationsPageTitle),
       ),
       body: Stack(children: [
         SizedBox(

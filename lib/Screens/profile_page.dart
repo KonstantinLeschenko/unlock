@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/generated/l10n.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -8,8 +9,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final firstNameControleer = TextEditingController();
-  final lastNameControlleer = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final patronimicController = TextEditingController();
   final birthdayController = TextEditingController();
   final emailController = TextEditingController();
@@ -17,8 +18,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   void dispose() {
-    firstNameControleer.dispose();
-    lastNameControlleer.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     patronimicController.dispose();
     birthdayController.dispose();
     emailController.dispose();
@@ -30,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Profile'),
+        title: Text(S.of(context).myProfile),
       ),
       body: Stack(
         children: [
@@ -68,22 +69,22 @@ class _ProfilePageState extends State<ProfilePage> {
                         padding: const EdgeInsets.all(20),
                         child: Column(
                           children: [
-                            const Text('Personal Data'),
+                            Text(S.of(context).personalData),
                             TextField(
-                              controller: lastNameControlleer,
-                              decoration: const InputDecoration(hintText: 'Last Name'),
+                              controller: lastNameController,
+                              decoration: InputDecoration(hintText: S.of(context).lastName),
                             ),
                             TextField(
-                              controller: firstNameControleer,
-                              decoration: const InputDecoration(hintText: 'First Name'),
+                              controller: firstNameController,
+                              decoration: InputDecoration(hintText: S.of(context).firstName),
                             ),
                             TextField(
                               controller: patronimicController,
-                              decoration: const InputDecoration(hintText: 'Patronimic'),
+                              decoration: InputDecoration(hintText: S.of(context).patronmic),
                             ),
                             TextField(
                               controller: birthdayController,
-                              decoration: const InputDecoration(hintText: 'Birth Day'),
+                              decoration: InputDecoration(hintText: S.of(context).birthDay),
                             ),
                           ],
                         ),
@@ -92,15 +93,15 @@ class _ProfilePageState extends State<ProfilePage> {
                         padding: const EdgeInsets.all(20),
                         child: Column(
                           children: [
-                            const Text('Contacts'),
+                           Text(S.of(context).contacts),
                             TextField(
                               controller: emailController,
-                              decoration: const InputDecoration(hintText: 'Email'),
+                              decoration: InputDecoration(hintText: S.of(context).email),
                             ),
                             TextField(
                               controller: phoneNumberController,
                               decoration:
-                                  const InputDecoration(hintText: 'Phone Number'),
+                                 InputDecoration(hintText: S.of(context).phoneNumber),
                             ),
                           ],
                         ),
@@ -109,7 +110,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         padding: const EdgeInsets.all(20),
                         child: Column(
                           children: [
-                            const Text('Language'),
+                            Text(S.of(context).languahe),
                             RadioListTile(
                                 value: 0,
                                 groupValue: 0,
@@ -118,12 +119,12 @@ class _ProfilePageState extends State<ProfilePage> {
                             RadioListTile(
                                 value: 1,
                                 groupValue: 0,
-                                title: const Text('Ukrainian'),
+                                title: const Text('Українська'),
                                 onChanged: (value) {}),
                             RadioListTile(
                                 value: 2,
                                 groupValue: 0,
-                                title: const Text('Russian'),
+                                title: const Text('Русский'),
                                 onChanged: (value) {}),
                           ],
                         ),
@@ -132,7 +133,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         children: [
                           Expanded(child: Padding(
                             padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
-                            child: ElevatedButton(onPressed: () {}, child: const Text('Save Changes'),),
+                            child: ElevatedButton(onPressed: () {}, child: Text(S.of(context).saveChanges),),
                           )),
                         ],
                       ),
@@ -141,7 +142,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
-                              child: ElevatedButton(onPressed: () {}, child: const Text('Log Out'),),
+                              child: ElevatedButton(onPressed: () {}, child: Text(S.of(context).logOut),),
                             ),
                           ),
                         ],

@@ -1,3 +1,8 @@
+import 'package:unlock/data/locator.dart';
+import 'package:unlock/generated/l10n.dart';
+
+final S _s = locator<S>();
+
 class Category {
   String categoryName;
 
@@ -5,18 +10,18 @@ class Category {
 }
 
 List<Category> categories = [
-  Category(categoryName: 'Crisis situations'),
-  Category(categoryName: 'Motherhood'),
-  Category(categoryName: 'Relationships with people'),
-  Category(categoryName: 'Finding support'),
-  Category(categoryName: 'Search for a resource'),
-  Category(categoryName: 'Building your own boundaries'),
-  Category(categoryName: 'Overcoming Fears'),
-  Category(categoryName: 'Priorities'),
-  Category(categoryName: 'Psychosomatics'),
-  Category(categoryName: 'Self-esteem and self-worth'),
-  Category(categoryName: 'Self-sabotage'),
-  Category(categoryName: 'Confidence'),
+  Category(categoryName: _s.catCrisisSituations),
+  Category(categoryName: _s.catMotherhood),
+  Category(categoryName: _s.catRelationhipsWithPeople),
+  Category(categoryName: _s.catFindingSupport),
+  Category(categoryName: _s.catSearchForAResource),
+  Category(categoryName: _s.catBuildingYourOwnBoundaries),
+  Category(categoryName: _s.catOvercomingFears),
+  Category(categoryName: _s.catPriorities),
+  Category(categoryName: _s.catPsychosomatics),
+  Category(categoryName: _s.catSelfEsteemAndSelfWorth),
+  Category(categoryName: _s.catSelfSabotage),
+  Category(categoryName: _s.catConfidence),
 ];
 
 class Practice {
@@ -215,7 +220,18 @@ class MyAPI {
     return practices.where((element) => element.practiceName == cat);
   }
 
-
-
-  
+  List<String> articles = [
+    _s.artWhatIsMac,
+    _s.artTypesOfMACDecks,
+    _s.artPryncyplesOfWorking,
+    _s.artStrategiesForWorking,
+    _s.artMethodsOfApplication,
+    _s.artMACDiagnostics,
+    _s.artAuxiliaryTool,
+    _s.artWorkingTool,
+    _s.artSchemeOfPsychocorrectionSession,
+    _s.artFixation,
+    _s.artRequestOptions,
+    _s.artSessionEndOptions
+  ];
 }

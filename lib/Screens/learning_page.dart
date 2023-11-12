@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/data/my_api.dart';
+import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
 // ignore: must_be_immutable
 class LearningPage extends StatelessWidget {
   LearningPage({super.key});
 
-  List<String> articles = [
-    'MAC - what is it and what is it for?',
-    'Types of MAC decks',
-    'Principles of working with MAC',
-    'Strategies for working with MAC',
-    'Methods of application',
-    'MAC - diagnostics',
-    'MAC - as an auxiliary tool',
-    'MAC - as a full-fledged working tool',
-    'Scheme of a psychocorrection session',
-    'MAC - fixation',
-    'Request options',
-    'Session end options'
-  ];
+  List<String> articles = MyAPI().articles;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Learning'),
+        title: Text(S.of(context).learning),
       ),
       body: Stack(
         children: [

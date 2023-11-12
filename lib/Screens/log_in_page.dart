@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
 class LogInPage extends StatefulWidget {
@@ -23,9 +24,7 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Log In'),
-      ),
+      appBar: AppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -63,18 +62,18 @@ class _LogInPageState extends State<LogInPage> {
                         children: [
                           TextField(
                             controller: loginController,
-                            decoration: const InputDecoration(
-                                icon: Icon(Icons.email),
-                                hintText: 'Your login'),
+                            decoration: InputDecoration(
+                                icon: const Icon(Icons.email),
+                                hintText: S.of(context).hintLogIn),
                           ),
                           TextField(
                             controller: passwordController,
                             obscureText: true,
                             enableSuggestions: false,
                             autocorrect: false,
-                            decoration: const InputDecoration(
-                              icon: Icon(Icons.password),
-                              hintText: 'Your password',
+                            decoration: InputDecoration(
+                              icon: const Icon(Icons.password),
+                              hintText: S.of(context).hintPassword,
                             ),
                           ),
                           Row(
@@ -83,7 +82,7 @@ class _LogInPageState extends State<LogInPage> {
                               TextButton(
                                   // resert password later
                                   onPressed: () {},
-                                  child: const Text('Forgot your password ?')),
+                                  child: Text(S.of(context).forgotPassword)),
                             ],
                           ),
                           Row(
@@ -99,7 +98,7 @@ class _LogInPageState extends State<LogInPage> {
                                         context.go('/home');
                                       }
                                     },
-                                    child: const Text('LogIn'),
+                                    child: Text(S.of(context).logIn),
                                   ),
                                 ),
                               ),
@@ -109,10 +108,10 @@ class _LogInPageState extends State<LogInPage> {
                       ),
                       Column(
                         children: [
-                          const Text('Do not have accont yet ?'),
+                          Text(S.of(context).doNotHaveAccount),
                           TextButton(
                               onPressed: () => context.go('/registration'),
-                              child: const Text('Register an account')),
+                              child: Text(S.of(context).register)),
                         ],
                       )
                     ],
