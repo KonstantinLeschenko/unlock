@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/data/auth.dart';
 import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
@@ -24,7 +25,6 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -80,8 +80,13 @@ class _LogInPageState extends State<LogInPage> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                  // resert password later
-                                  onPressed: () {},
+                                  // resert password
+                                  onPressed: () {
+                                    if (loginController.text != '') {
+                                      Auth()
+                                          .resetPassword(loginController.text);
+                                    }
+                                  },
                                   child: Text(S.of(context).forgotPassword)),
                             ],
                           ),
@@ -95,7 +100,12 @@ class _LogInPageState extends State<LogInPage> {
                                     onPressed: () {
                                       if ((loginController.text != '') &&
                                           (passwordController.text != '')) {
-                                        context.go('/home');
+                                        Auth().signInWithEmailAndPassword(
+                                            email: loginController.text,
+                                            password: passwordController.text);
+                                        if (Auth().currentUser != null) {
+                                          context.go('/home');
+                                        }
                                       }
                                     },
                                     child: Text(S.of(context).logIn),

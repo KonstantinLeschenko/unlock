@@ -83,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot your password ?"),
-        "hintLogIn": MessageLookupByLibrary.simpleMessage("Your login"),
+        "hintLogIn": MessageLookupByLibrary.simpleMessage("Your email"),
         "hintPassword": MessageLookupByLibrary.simpleMessage("Your password"),
         "languahe": MessageLookupByLibrary.simpleMessage("Language"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
@@ -93,7 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myProfile": MessageLookupByLibrary.simpleMessage("My profile"),
         "notificationsPageTitle":
             MessageLookupByLibrary.simpleMessage("Notifications"),
-        "patronmic": MessageLookupByLibrary.simpleMessage("Patronimic"),
+        "patronymic": MessageLookupByLibrary.simpleMessage("Patronimic"),
         "personalData": MessageLookupByLibrary.simpleMessage("Personal data"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "practices": MessageLookupByLibrary.simpleMessage("Practices"),

@@ -221,10 +221,10 @@ class S {
   }
 
   /// `Patronimic`
-  String get patronmic {
+  String get patronymic {
     return Intl.message(
       'Patronimic',
-      name: 'patronmic',
+      name: 'patronymic',
       desc: '',
       args: [],
     );
@@ -310,10 +310,10 @@ class S {
     );
   }
 
-  /// `Your login`
+  /// `Your email`
   String get hintLogIn {
     return Intl.message(
-      'Your login',
+      'Your email',
       name: 'hintLogIn',
       desc: '',
       args: [],

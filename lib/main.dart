@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -9,18 +10,24 @@ import 'package:unlock/Screens/home_page.dart';
 import 'package:unlock/Screens/learning_page.dart';
 import 'package:unlock/Screens/log_in_page.dart';
 import 'package:unlock/Screens/materials.dart';
-import 'package:unlock/Screens/notifications_page.dart';
 import 'package:unlock/Screens/practices_page.dart';
-import 'package:unlock/Screens/profile_page.dart';
 import 'package:unlock/Screens/registration_page.dart';
 import 'package:unlock/Screens/splash.dart';
 import 'package:flutter/services.dart';
 import 'package:unlock/Screens/user_page.dart';
 import 'package:unlock/data/locator.dart';
+import 'package:unlock/firebase_options.dart';
 import 'package:unlock/generated/l10n.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await FirebaseAppCheck.instance.activate(
+  //   androidProvider: AndroidProvider.debug,
+  //   appleProvider: AppleProvider.appAttest,
+  //   webProvider: ReCaptchaV3Provider('recaptcha-v3-site-key')
+  // );
   setupLocator();
   runApp(MyApp());
 }
@@ -34,12 +41,12 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp.router(
       localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
@@ -83,16 +90,8 @@ class MyApp extends StatelessWidget {
         builder: (context, state) => LearningPage(),
       ),
       GoRoute(
-        path: '/notifications',
-        builder: (context, state) => const NotificationsPage(),
-      ),
-      GoRoute(
         path: '/practices',
         builder: (context, state) => const PracticesPage(),
-      ),
-      GoRoute(
-        path: '/profile',
-        builder: (context, state) => const ProfilePage(),
       ),
       GoRoute(
         path: '/user',

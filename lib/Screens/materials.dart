@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../theme/theme_constants.dart';
 
 class MaterialsPage extends StatelessWidget {
@@ -21,7 +20,7 @@ class MaterialsPage extends StatelessWidget {
             child: Image.asset(
                 MediaQuery.of(context).platformBrightness == Brightness.dark
                     ? 'assets/bg_notifications_dark.png'
-                    : 'assets/bg_notitfications_light.png',
+                    : 'assets/bg_notifications_light.png',
                 fit: BoxFit.fill),
           ),
           Center(
