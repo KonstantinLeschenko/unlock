@@ -82,7 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("Імʼя"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Забули пароль ?"),
-        "hintLogIn": MessageLookupByLibrary.simpleMessage("Логін"),
+        "hintLogIn": MessageLookupByLibrary.simpleMessage("Електронна пошта"),
         "hintPassword": MessageLookupByLibrary.simpleMessage("Пароль"),
         "languahe": MessageLookupByLibrary.simpleMessage("Мова"),
         "lastName": MessageLookupByLibrary.simpleMessage("Прізвище"),
@@ -92,7 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myProfile": MessageLookupByLibrary.simpleMessage("Мій профіль"),
         "notificationsPageTitle":
             MessageLookupByLibrary.simpleMessage("Повідомлення"),
-        "patronmic": MessageLookupByLibrary.simpleMessage("По батькові"),
+        "patronymic": MessageLookupByLibrary.simpleMessage("По батькові"),
         "personalData": MessageLookupByLibrary.simpleMessage("Ососбисті дані"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефона"),
         "practices": MessageLookupByLibrary.simpleMessage("Практики"),

@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:unlock/data/auth.dart';
 import 'package:unlock/generated/l10n.dart';
+import '../data/cloud_firestore.dart';
 
 class FeedBackPage extends StatefulWidget {
   const FeedBackPage({super.key});
@@ -9,8 +12,15 @@ class FeedBackPage extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<FeedBackPage> {
+  CloudFirestore? service;
   final messageTheme = TextEditingController();
   final messageText = TextEditingController();
+
+  @override
+  void initState() {
+    service = CloudFirestore(FirebaseFirestore.instance);
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -53,43 +63,58 @@ class _MyWidgetState extends State<FeedBackPage> {
                             Brightness.dark
                         ? const Color(0xff101212)
                         : const Color(0xfffde0c7)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: TextField(
-                              controller: messageTheme,
-                              decoration: InputDecoration(hintText: S.of(context).themeOfTheMessege),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: SizedBox(
-                              height: 400,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
                               child: TextField(
-                                controller: messageText,
-                                maxLines: null,
-                                expands: true,
-                                decoration: InputDecoration(hintText: S.of(context).yourMessege),
+                                controller: messageTheme,
+                                decoration: InputDecoration(
+                                    hintText: S.of(context).themeOfTheMessege),
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: SizedBox(
+                                height: 400,
+                                child: TextField(
+                                  controller: messageText,
+                                  maxLines: null,
+                                  expands: true,
+                                  decoration: InputDecoration(
+                                      hintText: S.of(context).yourMessege),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(S.of(context).send),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            service?.addFeedBack({
+                              'date': DateTime.now(),
+                              'text': messageText.text,
+                              'theme': messageTheme.text,
+                              'user': Auth().currentUser?.email.toString(),
+                            });
+
+                            messageText.clear();
+                            messageTheme.clear();
+                            Navigator.pop(context);
+                          },
+                          child: Text(S.of(context).send),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

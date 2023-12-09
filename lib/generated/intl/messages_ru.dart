@@ -83,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("Имя"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Забыли пароль ?"),
-        "hintLogIn": MessageLookupByLibrary.simpleMessage("Логин"),
+        "hintLogIn": MessageLookupByLibrary.simpleMessage("Электронная почта"),
         "hintPassword": MessageLookupByLibrary.simpleMessage("Пароль"),
         "languahe": MessageLookupByLibrary.simpleMessage("Язык"),
         "lastName": MessageLookupByLibrary.simpleMessage("Фамилия"),
@@ -94,7 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myProfile": MessageLookupByLibrary.simpleMessage("Мой профиль"),
         "notificationsPageTitle":
             MessageLookupByLibrary.simpleMessage("Уведомления"),
-        "patronmic": MessageLookupByLibrary.simpleMessage("Отчество"),
+        "patronymic": MessageLookupByLibrary.simpleMessage("Отчество"),
         "personalData":
             MessageLookupByLibrary.simpleMessage("Персональный данные"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Номер телефона"),

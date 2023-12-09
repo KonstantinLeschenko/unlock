@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "457374277759",
+    "project_id": "unlock-19038",
+    "storage_bucket": "unlock-19038.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457374277759:android:6aae572296d2f946861f4a",
+        "android_client_info": {
+          "package_name": "com.example.unlock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmxa3V7owijBPSb_DS2kRPespi7Y4g_yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

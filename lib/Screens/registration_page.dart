@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:unlock/data/auth.dart';
 import 'package:unlock/generated/l10n.dart';
 import '../theme/theme_constants.dart';
 
@@ -86,11 +87,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
                               child: ElevatedButton(
-                                // create new user and lod in
+                                // create new user and go to login page
                                 onPressed: () => {
                                   if ((loginController.text != '') &&
                                       (passwordController.text != ''))
-                                    {context.go('/home')}
+                                    {
+                                      Auth().createUserWithEmailAndPassword(
+                                          email: loginController.text,
+                                          password: passwordController.text),
+                                      context.go('/login')
+                                    }
                                 },
                                 child: Text(S.of(context).register),
                               ),

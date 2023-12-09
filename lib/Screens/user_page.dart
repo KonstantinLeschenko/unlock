@@ -44,17 +44,11 @@ class UserPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     GestureDetector(
-                        onTap: () => context.push('/profile'),
-                        child: const Icon(Icons.account_box)),
-                    GestureDetector(
                         onTap: () => context.push('/feedback'),
                         child: const Icon(Icons.message)),
                     GestureDetector(
                         onTap: () => context.push('/consultation'),
                         child: const Icon(Icons.calendar_today)),
-                    GestureDetector(
-                        onTap: () => context.push('/notifications'),
-                        child: const Icon(Icons.notifications))
                   ],
                 ),
               ),

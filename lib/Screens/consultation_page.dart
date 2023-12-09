@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unlock/data/messengers.dart';
 import 'package:unlock/generated/l10n.dart';
 import 'package:unlock/theme/theme_constants.dart';
 
@@ -37,19 +38,57 @@ class ConsultationPage extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
-              child: const Padding(
-                padding: EdgeInsets.all(20.0),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    // Wrap with GestureDetector and redirect to instagram
-                    ImageIcon(AssetImage('assets/ic_instagram.png')),
-                    // Wrap with GestureDetector and redirect to telegram
-                    ImageIcon(AssetImage('assets/ic_telegram.png')),
-                    // Wrap with GestureDetector and redirect to viber
-                    ImageIcon(AssetImage('assets/ic_viber.png')),
-                    // Wrap with GestureDetector and redirect to gmail
-                    ImageIcon(AssetImage('assets/ic_google.png')),
+                    // open Instagram
+                    GestureDetector(
+                        onTap: () async {
+                          try {
+                            await joinInstagram();
+                          } on Exception {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text('Instagram is not installed')));
+                          }
+                        },
+                        child: const ImageIcon(
+                            AssetImage('assets/ic_instagram.png'))),
+
+                    // open telegram
+                    GestureDetector(
+                        onTap: () async {
+                          try {
+                            await joinTelegram();
+                          } on Exception {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content:
+                                        Text('Telegram is not installed')));
+                          }
+                        },
+                        child: const ImageIcon(
+                            AssetImage('assets/ic_telegram.png'))),
+
+                    // open gmail
+                    GestureDetector(
+                        onTap: () async {
+                          try {
+                            await joinGmail();
+                          } on Exception {
+                            // ignore: use_build_context_synchronously
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Gmail is not installed')));
+                          }
+                        },
+                        child: const ImageIcon(
+                            AssetImage('assets/ic_google.png'))),
                   ],
                 ),
               ),
